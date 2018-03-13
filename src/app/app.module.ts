@@ -7,6 +7,7 @@ import { BookListComponent } from "./books/book-list/book-list.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { BookFilterPipe } from "./books/book-list/book-list-filter.pipe";
 import { RatingComponent } from "./books/rating/rating.component";
+import { BookDataService } from "./books/book-data.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { RatingComponent } from "./books/rating/rating.component";
     RatingComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [BookDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

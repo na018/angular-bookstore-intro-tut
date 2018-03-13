@@ -1,30 +1,28 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Book } from '../book';
+import { Component, OnInit, OnChanges } from "@angular/core";
+import { Book } from "../book";
+import { BookDataService } from "../book-data.service";
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss']
+  selector: "app-book-list",
+  templateUrl: "./book-list.component.html",
+  styleUrls: ["./book-list.component.scss"]
 })
 export class BookListComponent implements OnInit, OnChanges {
-
   date = new Date();
   coverIsVisible = true;
-  searchValue = '';
-  books: Book[] = [
-    {title: 'The hero of Angular', coverUrl: '/assets/img/book-list/angular-hero.png', price: 25, rating: 4},
-    {title: 'Angular Hunter 2', coverUrl: '/assets/img/book-list/angular.jpeg', price: 5, rating: 3},
-    {title: 'Angular Hunter 1', coverUrl: '/assets/img/book-list/angular.jpeg', price: 15, rating: 1},
-    {title: 'Majesty of Vue', coverUrl: '/assets/img/book-list/vue.jpg', price: 15, rating: 5},
-  ];
+  searchValue = "";
+  books: Book[];
 
-  constructor() { console.log('Hello from Book-list constructor'); }
+  constructor(private _bookDataService: BookDataService) {
+    console.log("Hello from Book-list constructor");
+  }
 
   ngOnInit() {
-    console.log('Hello from Book-list ngOnInit');
+    console.log("Hello from Book-list ngOnInit");
+    this.books = this._bookDataService.getBooks();
   }
   ngOnChanges() {
-    console.log('Hello from Book-list ngOnChanges');
+    console.log("Hello from Book-list ngOnChanges");
   }
 
   toggleCover() {
@@ -33,5 +31,4 @@ export class BookListComponent implements OnInit, OnChanges {
   newRating(event) {
     console.log(event);
   }
-
 }
