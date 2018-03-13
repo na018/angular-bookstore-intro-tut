@@ -1,0 +1,5 @@
+<div (click)="clickOnStars()" class="rating"><span>{{stars}}/{{maxStars}}</span>
+<div class="elevation-5">
+  <div [style.width.%]="starWidth" class="stars-rating" [class]="starWidth>50 ? 'green' : 'red'"></div>
+</div>
+</div>

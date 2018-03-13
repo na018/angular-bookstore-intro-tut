@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    background: url('./assets/img/background_mac.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.elevation-5{
+    box-shadow: 1px 1px 5px rgb(84, 84, 84);
+}
+.elevation-3{
+  box-shadow: 1px 1px 3px rgb(0,0, 0);
+}
+.bg-white {
+    background-color: white;
+}
+.inline{
+  display: inline-block
+}

@@ -1,0 +1,29 @@
+<div class="bg-white elevation-5 card inline px-15">
+  <p>
+    book-list works!
+  </p>
+  <p>
+    <i> [{{date}}]</i>
+  </p>
+  <div class="btn" (click)="toggleCover()">{{coverIsVisible ? 'Hide' : 'Show'}} Cover Images</div>
+  <p><input type="text" [(ngModel)]='searchValue' placeholder="Search..."></p>
+  <p>Search for: {{searchValue | uppercase}}</p>
+
+  <table *ngIf="books && books.length" class="center">
+      <tr>
+          <th *ngIf="coverIsVisible">Image</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Rating</th>
+        </tr>
+    <tr *ngFor="let book of books | bookFilter: searchValue">
+        <td  *ngIf="coverIsVisible">
+            <img src={{book.coverUrl}} class="img-100 mt-5 elevation-3 mx-5">
+          </td>
+      <td>{{book.title}}</td>
+      <td>{{book.price}}€</td>
+      <td><app-rating [stars]="book.rating" [book]="book" (notify)="newRating($event)"></app-rating></td>
+    </tr>
+  </table>
+
+</div>
