@@ -1,4 +1,11 @@
-import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { Book } from "../book";
 
 @Component({
@@ -9,7 +16,7 @@ import { Book } from "../book";
 export class RatingComponent implements OnInit {
   @Input() stars: number;
   @Input() book: Book;
-  @Output()  notify: EventEmitter<string> = new EventEmitter<string>();
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
   starWidth = 0;
   maxStars = 5;
 
@@ -27,5 +34,11 @@ export class RatingComponent implements OnInit {
   }
   clickOnStars() {
     this.notify.emit(`"${this.book.title}" was clicked!`);
+  }
+  add() {
+    if (this.stars < this.maxStars) {this.stars++;  this.reCalc(); }
+  }
+  sub() {
+    if (this.stars > 0) {this.stars--;  this.reCalc(); }
   }
 }

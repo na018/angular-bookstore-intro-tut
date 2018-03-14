@@ -33,6 +33,9 @@ table {
 .mt-5{
   margin-top:5px;
 }
+.mt-3{
+  margin-top:3px;
+}
 .px-5{
   padding-right:5px;
   padding-left: 5px;
@@ -78,14 +81,29 @@ table {
   }
   .stars-rating{
     height: 10px;
+    height: 11px;
   }
 }
 
 .red{
   background-color:red;
-  height: 10px;
+  &.btn{
+    box-shadow: darkred;
+    &:hover {
+      box-shadow: unset;
+      color:white;
+      background: red;
+    }
+  }
 }
 .green{
   background-color:green;
-  height: 10px;
+  &.btn{
+    box-shadow: darkgreen;
+    &:hover {
+      box-shadow: unset;
+      color:white;
+      background: green;
+    }
+  }
 }
