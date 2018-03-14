@@ -8,6 +8,7 @@ import { CalculatorComponent } from "./calculator/calculator.component";
 import { BookFilterPipe } from "./books/book-list/book-list-filter.pipe";
 import { RatingComponent } from "./books/rating/rating.component";
 import { BookDataService } from "./books/book-data.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { BookDataService } from "./books/book-data.service";
     BookFilterPipe,
     RatingComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [BookDataService],
   bootstrap: [AppComponent]
 })

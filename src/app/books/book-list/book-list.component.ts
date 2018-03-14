@@ -12,6 +12,7 @@ export class BookListComponent implements OnInit, OnChanges {
   coverIsVisible = true;
   searchValue = "";
   books: Book[];
+  errorText: String;
 
   constructor(private _bookDataService: BookDataService) {
     console.log("Hello from Book-list constructor");
@@ -19,7 +20,13 @@ export class BookListComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log("Hello from Book-list ngOnInit");
-    this.books = this._bookDataService.getBooks();
+   // this.books = this._bookDataService.getBooks();
+   this._bookDataService.getBooks().subscribe(
+     data => {
+     this.books = data;
+   }, error => {
+     this.errorText = error;
+   }, () => {console.log('data received'); });
   }
   ngOnChanges() {
     console.log("Hello from Book-list ngOnChanges");
