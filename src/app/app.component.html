@@ -3,5 +3,30 @@
   <h1 class="bg-white elevation-5">
     Welcome to {{ title }}!
   </h1>
-  <app-book-list></app-book-list>
+  <nav>
+    <ul class="horizontal dark">
+        <li>
+            <a [routerLink]="['/']"
+            [class]="visitedItem === '' ? 'visited' : 'not-visited'"
+            (click)="visited('')">Home</a>
+          </li>
+      <li>
+        <a [routerLink]="['/calculator']"
+        [class]="visitedItem === 'Calculator' ? 'visited' : 'not-visited'"
+        (click)="visited('Calculator')">Calculator</a>
+      </li>
+      <li>
+        <a [routerLink]="['/books']"
+        [class]="visitedItem === 'books' ? 'visited' : 'not-visited'"
+        (click)="visited('books')"
+        >Book List</a>
+      </li>
+
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+  <!--app-book-list></app-book-list>
+  <app-show-book [bookId]="2"></app-show-book>
+  <app-show-book [bookTitle]="'The hero of Angular'"></app-show-book-->
+  <div class="bg-black footer">footer</div>
 </div>

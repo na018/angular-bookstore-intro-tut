@@ -1,5 +1,5 @@
 <div class="vh-max-80">
-  <div class="bg-white elevation-5 card inline px-15 py-15">
+  <div class="bg-white elevation-5 card inline px-15 py-15 container-modern-mobile">
     <div class="header bg-white px-5">
       <h3>Book List:</h3>
       <p>
@@ -18,15 +18,16 @@
         <th>Price</th>
         <th>Rating</th>
       </tr>
-      <tr *ngFor="let book of books | bookFilter: searchValue">
-        <td *ngIf="coverIsVisible">
-          <img src={{book.coverUrl}} class="img-100 mt-5 elevation-3 mx-5">
-        </td>
-        <td>{{book.title}}</td>
-        <td>{{book.price}}€</td>
-        <td>
-          <app-rating [stars]="book.rating" [book]="book" (notify)="newRating($event)"></app-rating>
-        </td>
+      <tr *ngFor="let book of books | bookFilter: searchValue"
+      (click)="changeBook(book.title)" class="pointer">
+          <td *ngIf="coverIsVisible">
+            <img src={{book.coverUrl}} class="img-100 mt-5 elevation-3 mx-5">
+          </td>
+          <td>{{book.title}}</td>
+          <td>{{book.price}}€</td>
+          <td>
+            <app-rating [stars]="book.rating" [book]="book" (notify)="newRating($event)"></app-rating>
+          </td>
       </tr>
     </table>
 

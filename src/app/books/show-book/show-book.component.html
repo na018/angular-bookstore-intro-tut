@@ -1,0 +1,18 @@
+<table *ngIf="book" class="center bg-white mt-5 container-modern-mobile px-5 py-5">
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Rating</th>
+  </tr>
+  <tr>
+    <td>
+      <img src={{book.coverUrl}} class="img-100 mt-5 elevation-3 mx-5">
+    </td>
+    <td>{{book.title}}</td>
+    <td>{{book.price}}€</td>
+    <td>
+      <app-rating [stars]="book.rating" [book]="book"></app-rating>
+    </td>
+  </tr>
+</table>

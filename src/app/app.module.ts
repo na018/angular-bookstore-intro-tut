@@ -9,20 +9,36 @@ import { BookFilterPipe } from "./books/book-list/book-list-filter.pipe";
 import { RatingComponent } from "./books/rating/rating.component";
 import { BookDataService } from "./books/book-data.service";
 import { HttpClientModule } from "@angular/common/http";
+import { ShowBookComponent } from "./books/show-book/show-book.component";
+import { RouterModule } from "@angular/router";
+//import {SharedModule} from './books/shared/shared.module';
+const table = [
+  { path: "", redirectTo: "", pathMatch: "full" },
+  {path: 'calculator', component: CalculatorComponent},
+  {path: 'books', component: BookListComponent},
+  {path: 'books/id/:id', component: ShowBookComponent},
+  {path: 'books/title/:title', component: ShowBookComponent},
 
+];
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     CalculatorComponent,
     BookFilterPipe,
-    RatingComponent
+    RatingComponent,
+    ShowBookComponent
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    //SharedModule,
+    RouterModule.forRoot(table, {enableTracing: true})
+  ],
   providers: [BookDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-
 
 // is_my_json_valid

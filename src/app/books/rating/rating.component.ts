@@ -16,7 +16,7 @@ import { Book } from "../book";
 export class RatingComponent implements OnInit {
   @Input() stars: number;
   @Input() book: Book;
-  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+  @Output() notify: EventEmitter<Number> = new EventEmitter<Number>();
   starWidth = 0;
   maxStars = 5;
 
@@ -33,7 +33,7 @@ export class RatingComponent implements OnInit {
     console.log(`recalc starWidth: ${this.starWidth}`);
   }
   clickOnStars() {
-    this.notify.emit(`"${this.book.title}" was clicked!`);
+    this.notify.emit(this.starWidth);
   }
   add() {
     if (this.stars < this.maxStars) {this.stars++;  this.reCalc(); }

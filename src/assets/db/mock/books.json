@@ -1,38 +1,44 @@
-[
-  {
+{ "books": [
+  { "id" : 1,
     "title": "The hero of Angular",
     "coverUrl": "/assets/img/book-list/angular-hero.png",
     "price": 25,
     "rating": 4
   },
   {
+    "id" : 2,
     "title": "Angular Hunter 2",
     "coverUrl": "/assets/img/book-list/angular.jpeg",
     "price": 5,
     "rating": 3
   },
   {
+    "id" : 3,
     "title": "Angular Hunter 1",
     "coverUrl": "/assets/img/book-list/angular.jpeg",
     "price": 15,
     "rating": 1
   },
   {
+    "id" : 4,
     "title": "Try a Different Vue",
     "coverUrl": "/assets/img/book-list/vue.jpg",
     "price": 15,
     "rating": 5
   },
   {
+    "id" : 5,
     "title": "Majesty of Vue",
     "coverUrl": "/assets/img/book-list/vue2.jpg",
     "price": 15,
     "rating": 5
   },
   {
+    "id" : 6,
     "title": "Be crazily Reactive",
     "coverUrl": "/assets/img/book-list/react.jpg",
     "price": 15,
-    "rating": 5
+    "rating": 4
   }
 ]
+}

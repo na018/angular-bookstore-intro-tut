@@ -11,10 +11,22 @@ export class BookDataService {
 
   getBooks(): Observable<Book[]> {
    return this._httpClient
-   .get<Book[]> ('http://localhost:4200/assets/db/books.json')
+   .get<Book[]> ('http://localhost:3000/books/')
    .pipe(tap(x => {console.log(x); }));
   }
+  getBook(title: string): Observable<Book[]> {
+    const URL = ``;
+    return this._httpClient
+    .get<Book[]> (`http://localhost:3000/books/?title=${title}`)
+    .pipe(tap(x => {console.log(x); }));
+  }
 
+  getBookById(id: Number): Observable<Book> {
+    const URL = ``;
+    return this._httpClient
+    .get<Book> (`http://localhost:3000/books/${id}`)
+    .pipe(tap(x => {console.log(x); }));
+  }
   getBooksOld(): Book[] {
     return [
       {

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from "@angular/core";
 import { Book } from "../book";
 import { BookDataService } from "../book-data.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-book-list",
@@ -14,7 +15,8 @@ export class BookListComponent implements OnInit, OnChanges {
   books: Book[];
   errorText: String;
 
-  constructor(private _bookDataService: BookDataService) {
+  constructor(private _bookDataService: BookDataService,
+    private _router: Router) {
     console.log("Hello from Book-list constructor");
   }
 
@@ -37,5 +39,8 @@ export class BookListComponent implements OnInit, OnChanges {
   }
   newRating(event) {
     console.log(event);
+  }
+  changeBook(title) {
+    this._router.navigate(['/books/title', title]);
   }
 }
