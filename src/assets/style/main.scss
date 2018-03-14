@@ -22,6 +22,7 @@ table {
 }
 .card{
   padding: 5px;
+  min-width: 400px;
 }
 .img-100{
   max-height: 100px;
@@ -106,4 +107,16 @@ table {
       background: green;
     }
   }
+}
+.vh-max-80{
+  max-height: 80vh;
+  overflow: auto;
+}
+.header{
+  position: fixed;
+  min-width: 400px;
+
+}
+.mt-250{
+  margin-top: 250px;
 }
