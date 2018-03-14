@@ -18,8 +18,20 @@
     "rating": 1
   },
   {
-    "title": "Majesty of Vue",
+    "title": "Try a Different Vue",
     "coverUrl": "/assets/img/book-list/vue.jpg",
+    "price": 15,
+    "rating": 5
+  },
+  {
+    "title": "Majesty of Vue",
+    "coverUrl": "/assets/img/book-list/vue2.jpg",
+    "price": 15,
+    "rating": 5
+  },
+  {
+    "title": "Be crazily Reactive",
+    "coverUrl": "/assets/img/book-list/react.jpg",
     "price": 15,
     "rating": 5
   }
